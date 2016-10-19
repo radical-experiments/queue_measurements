@@ -49,7 +49,7 @@ def get_timings(session_json):
                 print "The pilot entered 'Failed' state, or did not reach a final state"
                 Tx = -1
     else:
-        print "The pilot entere 'Failed' state before becoming Active"
+        print "The pilot entered 'Failed' state before becoming Active"
         Tx = -1
 
     print "Session: {0}, Tx: {1}, Tq: {2}".format(session_json, Tx, Tq)
