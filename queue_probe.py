@@ -4,10 +4,10 @@ import json
 import random
 import radical.pilot as rp
 
-SAMPLE_SIZE = 20
-WALLTIME = 120   #In minutes
+SAMPLE_SIZE = 25
+WALLTIME = 30   #In minutes
 OVERHEAD = 3    #Overhead incurred throughout the process
-CORES = 32
+CORES = 256 
 UTIL = 1        #Percent of Cores Utilized
 
 def job_select():

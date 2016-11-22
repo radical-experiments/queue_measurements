@@ -1,0 +1,4392 @@
+{
+    "pilot": [
+        {
+            "_id": "pilot.0000", 
+            "agent_config": {
+                "agent_launch_method": "SSH", 
+                "agent_layout": {
+                    "agent_0": {
+                        "bridges": [
+                            "agent_staging_input_queue", 
+                            "agent_scheduling_queue", 
+                            "agent_executing_queue", 
+                            "agent_staging_output_queue", 
+                            "agent_unschedule_pubsub", 
+                            "agent_reschedule_pubsub", 
+                            "agent_command_pubsub", 
+                            "agent_state_pubsub"
+                        ], 
+                        "components": {
+                            "AgentExecutingComponent": 1, 
+                            "AgentSchedulingComponent": 1, 
+                            "AgentStagingInputComponent": 1, 
+                            "AgentStagingOutputComponent": 1
+                        }, 
+                        "pull_units": true, 
+                        "sub_agents": [], 
+                        "target": "local"
+                    }
+                }, 
+                "bulk_collection_time": 1.0, 
+                "clone": {
+                    "AgentExecutingComponent": {
+                        "input": 1, 
+                        "output": 1
+                    }, 
+                    "AgentSchedulingComponent": {
+                        "input": 1, 
+                        "output": 1
+                    }, 
+                    "AgentStagingInputComponent": {
+                        "input": 1, 
+                        "output": 1
+                    }, 
+                    "AgentStagingOutputComponent": {
+                        "input": 1, 
+                        "output": 1
+                    }, 
+                    "AgentWorker": {
+                        "input": 1, 
+                        "output": 1
+                    }
+                }, 
+                "cores": 32, 
+                "db_poll_sleeptime": 0.1, 
+                "debug": 10, 
+                "drop": {
+                    "AgentExecutingComponent": {
+                        "input": 1, 
+                        "output": 1
+                    }, 
+                    "AgentSchedulingComponent": {
+                        "input": 1, 
+                        "output": 1
+                    }, 
+                    "AgentStagingInputComponent": {
+                        "input": 1, 
+                        "output": 1
+                    }, 
+                    "AgentStagingOutputComponent": {
+                        "input": 1, 
+                        "output": 1
+                    }, 
+                    "AgentWorker": {
+                        "input": 1, 
+                        "output": 1
+                    }
+                }, 
+                "heartbeat_interval": 10, 
+                "lrms": "SLURM", 
+                "max_io_loglength": 1024, 
+                "mongodb_url": "mongodb://mingtaiha:mingtaiha@ds053838.mlab.com:53838/hicomb", 
+                "mpi_launch_method": "MPIRUN_RSH", 
+                "pilot_id": "pilot.0000", 
+                "runtime": 240, 
+                "scheduler": "CONTINUOUS", 
+                "session_id": "rp.session.radical.mingtha.017112.0025", 
+                "spawner": "POPEN", 
+                "staging_area": "staging_area", 
+                "staging_scheme": "staging", 
+                "task_launch_method": "SSH"
+            }, 
+            "commands": [], 
+            "cores_per_node": null, 
+            "description": {
+                "_config": null, 
+                "access_schema": "gsissh", 
+                "candidate_hosts": null, 
+                "cleanup": null, 
+                "cores": 32, 
+                "exit_on_error": false, 
+                "memory": null, 
+                "project": "TG-MCB090174", 
+                "queue": "normal", 
+                "resource": "xsede.stampede", 
+                "runtime": 240, 
+                "sandbox": null
+            }, 
+            "finished": null, 
+            "global_sandbox": "/work/03662/tg829619/radical.pilot.sandbox", 
+            "health_check_enabled": true, 
+            "heartbeat": null, 
+            "input_transfer_finished": null, 
+            "input_transfer_started": null, 
+            "log": [
+                {
+                    "message": "Using bootstrapper /home/mingtha/ve/ve.rp_experiments/lib/python2.7/site-packages/radical/pilot/bootstrapper/bootstrap_1.sh", 
+                    "timestamp": 1478560341.947026
+                }, 
+                {
+                    "message": "Copying bootstrapper 'file://localhost/home/mingtha/ve/ve.rp_experiments/lib/python2.7/site-packages/radical/pilot/bootstrapper/bootstrap_1.sh' to agent sandbox (<saga.filesystem.directory.Directory object at 0x7eff2c06ff90>).", 
+                    "timestamp": 1478560341.947311
+                }, 
+                {
+                    "message": "Copying sdist 'file://localhost/home/mingtha/ve/ve.rp_experiments/local/lib/python2.7/site-packages/radical/utils/radical.utils-0.41.1.tar.gz' to sandbox (gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/).", 
+                    "timestamp": 1478560344.970458
+                }, 
+                {
+                    "message": "Copying sdist 'file://localhost/home/mingtha/ve/ve.rp_experiments/local/lib/python2.7/site-packages/saga/saga-python-0.41.3.tar.gz' to sandbox (gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/).", 
+                    "timestamp": 1478560346.27551
+                }, 
+                {
+                    "message": "Copying sdist 'file://localhost/home/mingtha/ve/ve.rp_experiments/local/lib/python2.7/site-packages/radical/pilot/controller/..//radical.pilot-v0.43.rc1-26-ge056b69-devel.tar.gz' to sandbox (gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/).", 
+                    "timestamp": 1478560347.621722
+                }, 
+                {
+                    "message": "Writing agent configuration to file '/tmp/rp_agent_cfg_dir9ztfjX/agent_0.cfg'.", 
+                    "timestamp": 1478560348.830557
+                }, 
+                {
+                    "message": "Copying agent configuration file 'file://localhost/tmp/rp_agent_cfg_dir9ztfjX/agent_0.cfg' to sandbox (gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/).", 
+                    "timestamp": 1478560348.831978
+                }, 
+                {
+                    "message": "Submitting SAGA job with description: {'Project': 'TG-MCB090174', 'Executable': '/bin/bash', 'TotalPhysicalMemory': None, 'WorkingDirectory': '/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/', 'Queue': 'normal', 'Environment': {}, 'WallTimeLimit': 240, 'Arguments': ['-l bootstrap_1.sh', \" -d 'radical.utils-0.41.1.tar.gz:saga-python-0.41.3.tar.gz:radical.pilot-v0.43.rc1-26-ge056b69-devel.tar.gz' -m 'create' -p 'pilot.0000' -r 'local' -s 'rp.session.radical.mingtha.017112.0025' -v '/work/03662/tg829619/radical.pilot.sandbox/ve_stampede' -b 'default' -a 'multicore' -e 'module purge' -e 'module load TACC' -e 'module load intel/15.0.2' -e 'module load python/2.7.12' -e 'module unload xalt' -e 'source ~train00/ssi_sourceme' -e 'export TACC_DELETE_FILES=TRUE'\"], 'ProcessesPerHost': None, 'Error': 'bootstrap_1.err', 'Output': 'bootstrap_1.out', 'CandidateHosts': None, 'TotalCPUCount': 32}", 
+                    "timestamp": 1478560358.323768
+                }, 
+                {
+                    "message": "SAGA job submitted with job id [slurm+gsissh://stampede.tacc.utexas.edu:2222/]-[7840513]", 
+                    "timestamp": 1478560376.003837
+                }
+            ], 
+            "nodes": null, 
+            "output_transfer_finished": null, 
+            "output_transfer_started": null, 
+            "pilotmanager": "pmgr.0000", 
+            "saga_job_id": "[slurm+gsissh://stampede.tacc.utexas.edu:2222/]-[7840513]", 
+            "sagajobid": null, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "started": 1478601272.944864, 
+            "state": "Active", 
+            "statehistory": [
+                {
+                    "state": "PendingLaunch", 
+                    "timestamp": 1478560335.18352
+                }, 
+                {
+                    "state": "Launching", 
+                    "timestamp": 1478560335.468738
+                }, 
+                {
+                    "state": "PendingActive", 
+                    "timestamp": 1478560376.004154
+                }, 
+                {
+                    "state": "Active", 
+                    "timestamp": 1478601272.944864
+                }
+            ], 
+            "submitted": 1478560335.18352, 
+            "unit_ids": [
+                "unit.000016", 
+                "unit.000007", 
+                "unit.000018", 
+                "unit.000019", 
+                "unit.000030", 
+                "unit.000031", 
+                "unit.000010", 
+                "unit.000011", 
+                "unit.000012", 
+                "unit.000013", 
+                "unit.000014", 
+                "unit.000015", 
+                "unit.000017", 
+                "unit.000020", 
+                "unit.000003", 
+                "unit.000002", 
+                "unit.000001", 
+                "unit.000009", 
+                "unit.000008", 
+                "unit.000029", 
+                "unit.000028", 
+                "unit.000025", 
+                "unit.000024", 
+                "unit.000027", 
+                "unit.000000", 
+                "unit.000021", 
+                "unit.000006", 
+                "unit.000023", 
+                "unit.000022", 
+                "unit.000005", 
+                "unit.000004", 
+                "unit.000026"
+            ], 
+            "unitmanager": "umgr.0000"
+        }
+    ], 
+    "pmgr": [
+        {
+            "_id": "pmgr.0000", 
+            "data": {}, 
+            "pilot_launcher_workers": 1
+        }
+    ], 
+    "session": {
+        "_id": "rp.session.radical.mingtha.017112.0025", 
+        "connected": 1478560327.798176, 
+        "created": 1478560327.798176, 
+        "name": null
+    }, 
+    "umgr": [
+        {
+            "_id": "umgr.0000", 
+            "input_transfer_workers": 2, 
+            "output_transfer_workers": 2, 
+            "scheduler": "round_robin"
+        }
+    ], 
+    "unit": [
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000016", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.428946
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.057814
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.474826
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.226526
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560337.780849
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615501.692871
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000016", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.618844
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560337.688064
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560337.688064
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.354006
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.355528
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.35885
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.359179
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.362926
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.521129
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.524746
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.526797
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615501.599726
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615501.692871
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.618844, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000007", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.429096
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.066541
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.582986
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.319124
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560337.96608
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615501.903905
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000007", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.616276
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560337.873281
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560337.873281
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.356526
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.357246
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.360165
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.360415
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.374541
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.526246
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.555588
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.557399
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615501.810936
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615501.903905
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503,129.114.83.25' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.616276, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000018", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1478560339.428833
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.618032
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.051521
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.140826
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.716472
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.5306
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.487986
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000018", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.619467
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.438085
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.438085
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.381275
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.38196
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.382798
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.383043
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.525279
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.537472
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.538376
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.540956
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.394732
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.487986
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.619467, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000019", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1478560339.428858
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.618508
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.052342
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.472281
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.234175
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.181058
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.192197
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.984883
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000019", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.619791
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.807963
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.807963
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.389635
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.390368
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.391191
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.391431
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.575543
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.433701
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.437662
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.440959
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.892011
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.984883
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.619791, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000030", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.428872
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.052954
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.472687
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.329966
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.411649
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.151178
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.10617
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000030", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.62308
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.058518
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.058518
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.358143
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.358838
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.361369
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.361605
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.384144
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.521923
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.527543
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.529336
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.013314
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.10617
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.62308, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000031", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1478560339.428884
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.618783
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.053541
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.47309
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.422646
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.088541
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.034883
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.858399
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000031", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.623378
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.942006
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.942006
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.388007
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.388744
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.389622
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.389865
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.566102
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.434917
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.444826
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.447406
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.765499
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.858399
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.623378, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000010", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.428896
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.05411
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.47339
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.517761
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.159549
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.97154
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.923392
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000010", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.617071
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.878858
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.878858
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.371416
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.372107
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.372946
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.373172
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.464715
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.524351
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.537264
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.550017
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.827745
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.923392
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.617071, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000011", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.428909
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.054685
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.473685
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.610463
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.879442
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.715794
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.679083
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000011", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.617336
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.622393
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.622393
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.36664
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.367431
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.36831
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.368536
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.436118
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.529759
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.571972
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.573926
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.586252
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.679083
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.617336, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000012", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.619073
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.055259
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.703392
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.648108
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.593864
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.425816
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000012", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.617621
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.49876
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.49876
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.398006
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.398712
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.399564
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.399803
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.634474
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.539258
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.548196
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.550835
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.330291
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.425816
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.617621, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000013", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.619097
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.056027
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.47398
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.829127
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.846938
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.778782
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.610468
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000013", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.617913
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.686181
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.686181
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.401108
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.401791
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.402617
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.402862
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.670729
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.433005
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.434123
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.436999
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.518159
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.610468
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.617913, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000014", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.42893
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.056655
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.474262
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615506.921775
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.691631
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.527069
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.485224
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000014", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.618222
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.434337
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.434337
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.363067
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.364104
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.364967
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.365195
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.413836
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.526821
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.558057
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.559885
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.392214
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.485224
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.618222, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000015", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.619136
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.057239
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.47454
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.017434
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560340.034205
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.965358
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.795398
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000015", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.618532
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.872746
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.872746
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.404273
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.405277
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.406119
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.406359
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.705173
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.436673
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.454753
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.457388
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.702301
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.795398
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.618532, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000017", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.42896
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.058387
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.579179
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.112764
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.974296
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.786132
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.735545
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000017", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.619156
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.693353
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.693353
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.368306
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.368996
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.369867
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.370113
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.445798
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.523746
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.534799
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.536596
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.639382
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.735545
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.619156, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000020", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.61944
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.059526
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.20827
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.462867
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.406346
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.235186
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000020", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.620091
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.313709
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.313709
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.394485
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.395429
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.396307
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.396544
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.612842
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.538658
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.544846
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.547536
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.141463
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.235186
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.620091, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000003", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.619471
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.060109
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.579996
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.30366
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.368074
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.380201
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.170117
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000003", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.615192
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.287496
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.287496
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.392797
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.393586
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.394473
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.394711
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.602894
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.435504
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.448028
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.450776
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.077234
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.170117
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.615192, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000002", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.429076
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.060677
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.580338
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.396401
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.067144
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.904025
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.864283
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000002", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.614921
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.808392
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.808392
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.369871
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.370552
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.371409
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.371636
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.455288
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.527376
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.560553
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.562266
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.77136
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.864283
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503,129.114.83.25' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.614921, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000001", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.619511
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.061243
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.489056
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560340.129419
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560341.130882
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.916641
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000001", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.614648
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560341.038256
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560341.038256
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.406139
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.406741
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.407598
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.407838
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.717839
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.539829
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.55149
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.55412
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.823771
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.916641
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.614648, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000009", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.429032
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.061811
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.58069
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.581837
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.50406
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.341958
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.299831
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000009", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.616805
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.24619
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.24619
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.359695
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.360518
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.362522
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.362761
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.39376
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.528573
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.566515
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.568528
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.204313
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.299831
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503,129.114.83.25' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.616805, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000008", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.619659
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.062375
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.581023
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.680506
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.743008
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.758386
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.540828
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000008", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.61654
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.66321
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.66321
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.399596
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.400262
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.40111
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.401351
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.661397
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.436086
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.451391
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.454138
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.448367
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.540828
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.61654, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000029", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.429048
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.062956
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.58135
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.77626
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.599214
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.41009
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.351693
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000029", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.622781
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.317203
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.317203
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.361448
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.362192
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.363706
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.363945
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.40411
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.522512
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.530018
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.531771
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.258775
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.351693
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.622781, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000028", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.42906
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.06355
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.581674
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.868998
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.251862
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.092063
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.052771
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000028", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.622482
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.996828
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.996828
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.372962
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.373713
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.374628
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.374879
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.474209
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.529147
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.569165
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.571245
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.956705
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.052771
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.622482, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000025", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1478560339.428985
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.619734
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.064148
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615507.964312
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.903444
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.715597
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.673088
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000025", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.621586
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.62305
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.62305
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.384454
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.385463
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.386345
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.386584
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.546422
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.540399
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.554738
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.557378
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.580209
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.673088
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.621586, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000024", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1478560339.428997
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.619991
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.064681
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.582013
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.057133
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.531633
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.345604
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.302294
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000024", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.621287
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.253108
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.253108
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.378137
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.378852
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.379724
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.379957
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.50643
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.525561
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.553146
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.554925
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.206932
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.302294
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.621287, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000027", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.429008
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.065231
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.58234
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.149709
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560337.784035
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560338.598115
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615502.546875
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000027", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.622182
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560338.505236
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560338.505236
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.365002
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.365702
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.366638
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.366868
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.426363
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.523135
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.532408
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.534125
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615502.453775
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615502.546875
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503,129.114.83.25' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.622182, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000000", 
+            "callbackhistory": [
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.42902
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.620234
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.065765
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.582663
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.242343
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.439435
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.276937
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.238154
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000000", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.614365
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.184442
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.184442
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.376647
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.377254
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.378125
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.378356
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.496965
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.527954
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.562916
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.565843
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.145067
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.238154
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503,129.114.83.25' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.614365, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000021", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1478560339.428973
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.61918
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.05896
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.579603
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.335522
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.811488
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.647086
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.613884
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000021", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.62039
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.554311
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.554311
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.382814
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.383567
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.384451
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.384691
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.537079
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.434325
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.441567
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.44419
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.518237
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.613884
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.62039, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000006", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1478560339.429145
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.620373
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.067144
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.428461
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.996312
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.84957
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.799576
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000006", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.616011
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.738979
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.738979
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.386357
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.387127
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.388003
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.388242
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.555706
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.538066
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.541592
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.544228
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.706381
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.799576
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.616011, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000023", 
+            "callbackhistory": [
+                {
+                    "state": "PendingInputStaging", 
+                    "timestamp": 1478560339.429121
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.620604
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.067608
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.675914
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.524213
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.623988
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.461873
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.423149
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000023", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.620989
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.36922
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.36922
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.379727
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.380423
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.381257
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.381483
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.515717
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.530394
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.574566
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.576617
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.330367
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.423149
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.620989, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000022", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.620864
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.068992
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.617007
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.275812
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.221236
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.046601
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000022", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.620689
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.128432
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.128432
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.391226
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.391914
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.392792
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.393048
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.58543
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.541528
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.561262
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.563913
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.950742
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.046601
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.620689, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000005", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.620842
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.068534
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.712623
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.555922
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.56802
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.356218
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000005", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.615741
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.472748
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.472748
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.396315
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.397116
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.397976
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.398217
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.623407
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.540963
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.557995
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.560623
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.262903
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.356218
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.615741, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000004", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.429133
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.068078
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615502.676336
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.805468
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560338.344222
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560339.160538
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615503.111181
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000004", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.615463
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560339.066258
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560339.066258
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.374614
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.375739
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.376616
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.376853
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.487438
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615500.524949
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615500.550686
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615500.552476
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615503.018111
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615503.111181
+                }
+            ], 
+            "stderr": "Warning: Permanently added 'c509-503' (RSA) to the list of known hosts.\r\n", 
+            "stdout": "", 
+            "submitted": 1478560336.615463, 
+            "unitmanager": "umgr.0000"
+        }, 
+        {
+            "Agent_Input_Directives": [], 
+            "Agent_Input_Status": null, 
+            "Agent_Output_Directives": [], 
+            "Agent_Output_Status": null, 
+            "FTW_Input_Directives": [], 
+            "FTW_Input_Status": null, 
+            "FTW_Output_Directives": [], 
+            "FTW_Output_Status": null, 
+            "_id": "unit.000026", 
+            "callbackhistory": [
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560342.620885
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601283.069448
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615508.898373
+                }
+            ], 
+            "control": "umgr", 
+            "description": {
+                "arguments": [
+                    "14220"
+                ], 
+                "cleanup": false, 
+                "cores": 1, 
+                "environment": null, 
+                "executable": "/bin/sleep", 
+                "input_staging": null, 
+                "kernel": null, 
+                "mpi": false, 
+                "name": null, 
+                "output_staging": null, 
+                "post_exec": null, 
+                "pre_exec": null, 
+                "restartable": false, 
+                "stderr": null, 
+                "stdout": null
+            }, 
+            "exec_locs": null, 
+            "exit_code": 0, 
+            "finished": null, 
+            "log": [
+                {
+                    "message": "Scheduled for data transfer to ComputePilot pilot.0000.", 
+                    "timestamp": 1478560339.939221
+                }, 
+                {
+                    "message": "push unit to agent after ftw staging", 
+                    "timestamp": 1478560340.945854
+                }, 
+                {
+                    "message": "Output transfer completed.", 
+                    "timestamp": 1478615504.73136
+                }
+            ], 
+            "pilot": "pilot.0000", 
+            "pilot_sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000/", 
+            "restartable": false, 
+            "sandbox": "gsisftp://stampede.tacc.utexas.edu:2222/work/03662/tg829619/radical.pilot.sandbox/rp.session.radical.mingtha.017112.0025-pilot.0000//unit.000026", 
+            "started": null, 
+            "state": "Done", 
+            "statehistory": [
+                {
+                    "state": "Scheduling", 
+                    "timestamp": 1478560336.621885
+                }, 
+                {
+                    "state": "StagingInput", 
+                    "timestamp": 1478560340.853295
+                }, 
+                {
+                    "state": "AgentStagingInputPending", 
+                    "timestamp": 1478560340.853295
+                }, 
+                {
+                    "state": "AgentStagingInput", 
+                    "timestamp": 1478601278.402633
+                }, 
+                {
+                    "state": "AllocatingPending", 
+                    "timestamp": 1478601278.403392
+                }, 
+                {
+                    "state": "Allocating", 
+                    "timestamp": 1478601278.404255
+                }, 
+                {
+                    "state": "ExecutingPending", 
+                    "timestamp": 1478601278.404494
+                }, 
+                {
+                    "state": "Executing", 
+                    "timestamp": 1478601278.680872
+                }, 
+                {
+                    "state": "AgentStagingOutputPending", 
+                    "timestamp": 1478615501.542107
+                }, 
+                {
+                    "state": "AgentStagingOutput", 
+                    "timestamp": 1478615501.564519
+                }, 
+                {
+                    "state": "PendingOutputStaging", 
+                    "timestamp": 1478615501.567171
+                }, 
+                {
+                    "state": "StagingOutput", 
+                    "timestamp": 1478615504.635855
+                }, 
+                {
+                    "state": "Done", 
+                    "timestamp": 1478615504.73136
+                }
+            ], 
+            "stderr": "", 
+            "stdout": "", 
+            "submitted": 1478560336.621885, 
+            "unitmanager": "umgr.0000"
+        }
+    ]
+}

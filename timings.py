@@ -9,8 +9,12 @@ folder = sys.argv[1]
 def get_timings(session_json):
     with open(session_json) as j:
         j_file = json.load(j)
-        
-    state_history = j_file["pilot"][0]["statehistory"]
+    
+    try:
+        state_history = j_file["pilot"][0]["statehistory"]
+    except:
+        print "Session: {0}, Something went very wrong with this run".format(session_json)
+        return
 
     pilot_lifetime = dict()
 
@@ -27,8 +31,9 @@ def get_timings(session_json):
     if "Active" in pilot_lifetime and "PendingActive" in pilot_lifetime:
         Tq = pilot_lifetime["Active"] - pilot_lifetime["PendingActive"]
     else:
-        print "There was no Tq"
+        print "Session: {0}, There was no Tq".format(session_json)
         Tq = -1
+        return
 
     if "Active" in pilot_lifetime:
         if "Canceled" in pilot_lifetime:
@@ -46,10 +51,10 @@ def get_timings(session_json):
                 #print max_done_timestamp
                 Tx = max_done_timestamp - pilot_lifetime["Active"]
             else:
-                print "The pilot entered 'Failed' state, or did not reach a final state"
+                print "Session: {0}, The pilot entered 'Failed' state, or did not reach a final state".format(session_json)
                 Tx = -1
     else:
-        print "The pilot entered 'Failed' state before becoming Active"
+        print "Session: {0}, The pilot entered 'Failed' state before becoming Active".format(session_json)
         Tx = -1
 
     print "Session: {0}, Tx: {1}, Tq: {2}".format(session_json, Tx, Tq)
